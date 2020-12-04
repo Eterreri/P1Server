@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.top-nav {
+    background-color: #222;
+    overflow: auto;
+}
+
+.top-nav a {
+    float: left;
+    color: #fff;
+    text-align: center;
+    padding: 20px 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.top-nav a:hover {
+    background-color: #bbb;
+    color: black;
+}
+
+.top-nav a.curr {
+    background-color: #228b22;
+    color: white;
+}
+
+.inErr {
+    color: red;
+    font-size: 10px;
+}

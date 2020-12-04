@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+	<display-name>com.revature.Project0</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>HelloServlet</servlet-name>
+		<servlet-class>com.revature.servlet.HelloServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>HelloServlet</servlet-name>
+		<url-pattern>/HelloWorld/MyChanges</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.revature.servlet.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/Login/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<servlet-class>com.revature.servlet.CreateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<url-pattern>/Login/CreateUser</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>CreateUserServlet</servlet-name>
+		<url-pattern>/Login/CreateUser/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LogoutServlet</servlet-name>
+		<servlet-class>com.revature.servlet.LogoutServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogoutServlet</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>CreateTripServlet</servlet-name>
+		<servlet-class>com.revature.servlet.CreateTripServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateTripServlet</servlet-name>
+		<url-pattern>/Create/Trip/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>GetTripServlet</servlet-name>
+		<servlet-class>com.revature.servlet.GetTripServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetTripServlet</servlet-name>
+		<url-pattern>/Trip/All</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetTripServlet</servlet-name>
+		<url-pattern>/Trip/Edit</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetTripServlet</servlet-name>
+		<url-pattern>/Trip/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Get_ItemsServlet</servlet-name>
+		<servlet-class>com.revature.servlet.Get_ItemsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Get_ItemsServlet</servlet-name>
+		<url-pattern>/Item/All</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ItemToTrip</servlet-name>
+		<servlet-class>com.revature.servlet.ItemToTripServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ItemToTrip</servlet-name>
+		<url-pattern>/Trip/Item/Add</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>StaticResourceServlet</servlet-name>
+		<servlet-class>com.revature.servlet.StaticResourceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>StaticResourceServlet</servlet-name>
+		<url-pattern></url-pattern>
+		<url-pattern>/login</url-pattern>
+		<url-pattern>/logout</url-pattern>
+		<url-pattern>/create_trip</url-pattern>
+		<url-pattern>/create_user</url-pattern>
+		<url-pattern>/js/landing</url-pattern>
+		<url-pattern>/js/login</url-pattern>
+		<url-pattern>/js/logout</url-pattern>
+		<url-pattern>/js/create-trip</url-pattern>
+		<url-pattern>/js/create-user</url-pattern>
+		<url-pattern>/js/init</url-pattern>
+		<url-pattern>/styles/style</url-pattern>
+	</servlet-mapping>
+
+</web-app>
