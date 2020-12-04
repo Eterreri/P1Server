@@ -112,3 +112,8 @@ form {
     display: block;
     font-weight: 700;
 }
+
+#loginErr{
+    margin: 20px;
+    font-weight: 550;
+}
