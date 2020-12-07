@@ -18,7 +18,7 @@ const onClick = function(event){
             }
         }
 
-        xhr.open('POST', 'http://localhost:8080/OutdoorApp/Create/Trip');
+        xhr.open('POST', 'http://18.188.250.14:8080/OutdoorApp/Create/Trip');
         xhr.send(JSON.stringify(trip));
     } else {
         tripErr.innerHTML = 'Please input a Trip Name!'

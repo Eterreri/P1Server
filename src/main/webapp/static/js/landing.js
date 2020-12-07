@@ -23,7 +23,7 @@ const getTrips = function() {
         }
     }
     
-    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Trip/All')
+    xhr.open('GET', 'http://http://18.188.250.14:8080/OutdoorApp/Trip/All')
     xhr.send();
 }
 getTrips()

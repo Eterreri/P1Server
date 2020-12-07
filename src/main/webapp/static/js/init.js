@@ -9,7 +9,7 @@ const init = function(){
         }
     }
     
-    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Login')
+    xhr.open('GET', 'http://18.188.250.14:8080/OutdoorApp/Login')
     xhr.send();
 }
 
