@@ -54,9 +54,4 @@ const navbarInit = function(loggedin){
     document.getElementById('navbar').innerHTML = navbarHTML
 }
 
-function callFlashcardApi(data){
-	console.log('fuck')
-	console.log(data); 
-}
-
 init();
