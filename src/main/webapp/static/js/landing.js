@@ -1,9 +1,9 @@
-const addTrip = function(trip) {
+const addTrip = function(trip, tripid) {
     const tableBody = document.getElementById('table-data')
 
     const entry = document.createElement('tr')
 
-    entry.innerHTML = `<td>${trip}</td>`
+    entry.innerHTML = `<td>${trip}</td><td id="trash"><button value=${tripid} id="trashBtn"><button></td>`
 
     tableBody.appendChild(entry)
 }
@@ -16,14 +16,14 @@ const getTrips = function() {
         if(this.readyState == 4 && this.status == 200){
             const data = JSON.parse(xhr.responseText)
             data.forEach(element => {
-                addTrip(element.tripName)
+                addTrip(element.tripName, element.tripid)
             });
         } else if(this.readyState == 4 && this.status == 401){
             body.innerHTML = '<p>Hey there, looks like you aren\'t <a href="/OutdoorApp/login">logged in!</a></p>'
         }
     }
     
-    xhr.open('GET', 'http://18.188.250.14:8080/OutdoorApp/Trip/All')
+    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Trip/All')
     xhr.send();
 }
 getTrips()

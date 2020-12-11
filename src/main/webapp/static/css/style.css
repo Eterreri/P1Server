@@ -117,3 +117,33 @@ form {
     margin: 20px;
     font-weight: 550;
 }
+
+#trashBtn {
+    height: 100%;
+    width: 100%;
+    background-image: url(/OutdoorApp/img/trash);
+    background-size: cover;
+    background-color: #ddd;
+    border: none;
+    border-radius: 10px;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    padding-top: 4px;
+}
+
+#trashBtn:hover {
+    background-color: #DC143C;
+}
+
+#trash{
+    width: 25px;
+    height: 37px;
+    white-space: nowrap;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+#trash:hover{
+    background-color: #DC143C;
+}

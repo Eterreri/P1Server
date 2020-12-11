@@ -89,6 +89,11 @@ public class StaticResourceServlet extends HttpServlet {
 				response.setContentType("text/css");
 				response.setStatus(200);
 				break;
+			case "/img/trash":
+				request.getRequestDispatcher("/static/img/trash.png").include(request, response);
+				response.setContentType("image/png");
+				response.setStatus(200);
+				break;
 			}
 		}
 	}

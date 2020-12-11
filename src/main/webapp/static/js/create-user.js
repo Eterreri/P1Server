@@ -26,7 +26,7 @@ const onClick = function(event){
             }
         }
 
-        xhr.open('POST', 'http://18.188.250.14:8080/OutdoorApp/Login/CreateUser');
+        xhr.open('POST', 'http://localhost:8080/OutdoorApp/Login/CreateUser');
         xhr.send(JSON.stringify(user));
     } else if(username.value && !password.value){
         passErr.innerHTML = 'Please input a password!'

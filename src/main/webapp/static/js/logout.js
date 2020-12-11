@@ -7,7 +7,7 @@ const logout = function(){
             window.location.href = '/OutdoorApp';
         }
     }
-    xhr.open('GET', 'http://18.188.250.14:8080/OutdoorApp/Logout');
+    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Logout');
     xhr.send();
 }
 

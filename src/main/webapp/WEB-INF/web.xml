@@ -114,6 +114,17 @@
 		<url-pattern>/js/create-user</url-pattern>
 		<url-pattern>/js/init</url-pattern>
 		<url-pattern>/styles/style</url-pattern>
+		<url-pattern>/img/trash</url-pattern>
 	</servlet-mapping>
+	
+	<filter>
+        <filter-name>CorsFilter</filter-name>
+       <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>CorsFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
 
 </web-app>
