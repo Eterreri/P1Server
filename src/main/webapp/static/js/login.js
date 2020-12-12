@@ -22,7 +22,7 @@ const onClick = function(event){
             }
         }
 
-        xhr.open('POST', 'http://ec2-18-188-250-14.us-east-2.compute.amazonaws.com:8080/OutdoorApp/Login');
+        xhr.open('POST', 'http://localhost:8080/OutdoorApp/Login');
         xhr.send(JSON.stringify(user));
     } else if(username.value && !password.value){
         passErr.innerHTML = 'Please input a password!'

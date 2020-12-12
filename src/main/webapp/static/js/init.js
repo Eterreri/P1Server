@@ -9,14 +9,13 @@ const init = function(){
         }
     }
     
-    xhr.open('GET', 'http://ec2-18-188-250-14.us-east-2.compute.amazonaws.com:8080/OutdoorApp/Login')
+    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Login')
     xhr.send();
 }
 
 const navbarInit = function(loggedin){
     let home = createTrip = createUser = login = logout = 'class="not"'
     const path = window.location.pathname.replace('/OutdoorApp', '')
-    console.log(path)
     switch(path){
         case '/':
             home = 'class="curr"'

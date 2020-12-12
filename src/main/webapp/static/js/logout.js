@@ -7,7 +7,7 @@ const logout = function(){
             window.location.href = '/OutdoorApp';
         }
     }
-    xhr.open('GET', 'http://ec2-18-188-250-14.us-east-2.compute.amazonaws.com:8080/OutdoorApp/Logout');
+    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Logout');
     xhr.send();
 }
 

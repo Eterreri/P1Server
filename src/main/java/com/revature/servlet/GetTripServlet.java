@@ -28,8 +28,15 @@ public class GetTripServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		if (session.isNew()) {
-			response.getWriter().append("Please login");
-			response.setStatus(401);
+			if(request.getPathInfo().substring(1) != "") {
+				ArrayList<Trip> trips = trip.getAllTrips(Integer.parseInt(request.getPathInfo().substring(1)));
+				response.getWriter().append(objectMapper.writeValueAsString(trips));
+				response.setContentType("application/json");
+				response.setStatus(200);
+			} else {
+				response.getWriter().append("Please login");
+				response.setStatus(401);
+			}
 		} else {
 			People p = (People) session.getAttribute("user");
 			if (p != null) {

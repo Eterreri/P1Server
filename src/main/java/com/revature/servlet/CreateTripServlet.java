@@ -28,17 +28,34 @@ public class CreateTripServlet extends HttpServlet {
 			throws ServletException, IOException {
 		BufferedReader reader = request.getReader();
 		HttpSession session = request.getSession();
-		if (session.isNew()) {
-			response.getWriter().append("Please login.");
-		} else {
-			StringBuilder sb = new StringBuilder();
-			String line;
-			while ((line = reader.readLine()) != null) {
-				sb.append(line);
-			}
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while ((line = reader.readLine()) != null) {
+			sb.append(line);
+		}
 
-			String jsonString = sb.toString();
-			System.out.println(jsonString);
+		String jsonString = sb.toString();
+		System.out.println(jsonString);
+		if (session.isNew()) {
+			if(request.getPathInfo().substring(1) != "") {
+				try {
+					TripTemplate tripData = objectMapper.readValue(jsonString, TripTemplate.class);
+					System.out.println(tripData.getName());
+					Trip t = TM.createTrip(Integer.parseInt(request.getPathInfo().substring(1)), tripData.getName());
+					if (t != null) {
+						// session.setAttribute("trip", t);
+						response.getWriter().append(objectMapper.writeValueAsString(t));
+						response.setContentType("application/json");
+						response.setStatus(201);
+					}
+				} catch (JsonProcessingException e) {
+					e.printStackTrace();
+				}
+			} else {
+				response.getWriter().append("Please login");
+				response.setStatus(401);
+			}
+		} else {
 			try {
 				TripTemplate tripData = objectMapper.readValue(jsonString, TripTemplate.class);
 				System.out.println(tripData.getName());

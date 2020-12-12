@@ -23,7 +23,7 @@ const getTrips = function() {
         }
     }
     
-    xhr.open('GET', 'http://ec2-18-188-250-14.us-east-2.compute.amazonaws.com:8080/OutdoorApp/Trip/All')
+    xhr.open('GET', 'http://localhost:8080/OutdoorApp/Trip/All')
     xhr.send();
 }
 getTrips()

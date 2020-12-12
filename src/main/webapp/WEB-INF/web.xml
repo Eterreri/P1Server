@@ -71,6 +71,10 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>GetTripServlet</servlet-name>
+		<url-pattern>/Trip/All/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetTripServlet</servlet-name>
 		<url-pattern>/Trip/Edit</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
@@ -116,15 +120,36 @@
 		<url-pattern>/styles/style</url-pattern>
 		<url-pattern>/img/trash</url-pattern>
 	</servlet-mapping>
-	
-	<filter>
-        <filter-name>CorsFilter</filter-name>
-       <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-    </filter>
 
-    <filter-mapping>
-        <filter-name>CorsFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
+	<filter>
+		<filter-name>CorsFilter</filter-name>
+		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+		<init-param>
+			<param-name>cors.allowed.origins</param-name>
+			<param-value>http://travel-planner-bucket.s3-website.us-east-2.amazonaws.com, http://localhost:3000, http://192.168.10.242:3000</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.allowed.methods</param-name>
+			<param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.allowed.headers</param-name>
+			<param-value>Content-Type,X-Requested-With,Accept,Accept-Encoding,Accept-Language,Origin,Access-Control-Request-Method, Access-Control-Request-Headers,Connection,Host,authorization,Set-Cookie</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.supportsCredentials</param-name>
+			<param-value>true</param-value>
+		</init-param>
+		<init-param>
+			<param-name>cors.exposed.headers</param-name>
+			<param-value>Access-Control-Allow-Origin,Access-Control-Allow-Credentials</param-value>
+		</init-param>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>CorsFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
 
 </web-app>
