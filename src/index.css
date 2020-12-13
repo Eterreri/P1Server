@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 17px;
+}
+
+.top-nav {
+  background-color: #222;
+  overflow: auto;
+}
+
+.top-nav button {
+  float: left;
+  color: #fff;
+  text-align: center;
+  padding: 20px 15px;
+  text-decoration: none;
+  font-size: 20px;
+  border: none;
+  background-color: #222;
+}
+
+.top-nav button:hover {
+  background-color: #bbb;
+  color: black;
+}
+
+.top-nav button.curr {
+  background-color: #228b22;
+  color: white;
+}
+
+.inErr {
+  color: red;
+  font-size: 10px;
+}
+
+.content {
+  max-width: 75%;
+  margin: 100px auto;
+  padding: 10px;
+  text-align: center;
+  background-color: #ddd;
+  border-radius: 15px;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.table td, .table th{
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.table td:hover{
+  background-color: #228b22;
+  color: #fff;
+}
+
+.table th{
+  padding: 15px 10px;
+  background-color: #228b22;
+  color: #fff;
+  font-size: 20px;
+}
+
+h1 {
+  padding: 15px 10px;
+  background-color: #228b22;
+  color: #fff;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+form {
+  padding: 15px;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+}
+
+.button {
+  margin: 20px;
+  background-color: #4caf50;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #228b22;
+}
+
+.form-group input {
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  display: block;
+  margin: 10px 20%;
+  padding: 5px;
+  width: 60%;
+}
+
+.form-group label{
+  margin: 10px 20%;
+  text-align: left;
+  display: block;
+  font-weight: 700;
+}
+
+#loginErr{
+  margin: 20px;
+  font-weight: 550;
+}
+
+#trashBtn {
+  height: 100%;
+  width: 100%;
+  /*background-image: url(/OutdoorApp/img/trash);*/
+  background-size: cover;
+  background-color: #ddd;
+  border: none;
+  border-radius: 10px;
+  background-origin: content-box;
+  background-repeat: no-repeat;
+  padding-top: 4px;
+}
+
+#trashBtn:hover {
+  background-color: #DC143C;
+}
+
+#trash{
+  width: 25px;
+  height: 37px;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+#trash:hover{
+  background-color: #DC143C;
+}
