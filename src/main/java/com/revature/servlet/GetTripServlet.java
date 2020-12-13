@@ -78,17 +78,17 @@ public class GetTripServlet extends HttpServlet {
 
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
+		BufferedReader reader = request.getReader();
+		StringBuilder sb = new StringBuilder();
+		String line;
+		while ((line = reader.readLine()) != null) {
+			sb.append(line);
+		}
+		String jsonString = sb.toString();
 		if (session.getAttribute("user") != null) {
 			if (session.getAttribute("trip") != null) {
-				BufferedReader reader = request.getReader();
-				StringBuilder sb = new StringBuilder();
-				String line;
-				while ((line = reader.readLine()) != null) {
-					sb.append(line);
-				}
 				People p = (People) session.getAttribute("user");
 				Trip t = (Trip) session.getAttribute("trip");
-				String jsonString = sb.toString();
 				System.out.println(jsonString);
 				TripTemplate tripData = objectMapper.readValue(jsonString, TripTemplate.class);
 				Trip newTrip = TM.EditTripName(p.getId(), t.getTripId(), tripData.getName());
@@ -102,7 +102,20 @@ public class GetTripServlet extends HttpServlet {
 				response.getWriter().append("Select a trip");
 			}
 		} else {
-			response.getWriter().append("Please login!");
+			if(request.getPathInfo().substring(6) != "") {
+				System.out.println(request.getPathInfo().substring(6));
+				TripTemplate tripData = objectMapper.readValue(jsonString, TripTemplate.class);
+				Trip newTrip = TM.EditTripName(Integer.parseInt(request.getPathInfo().substring(6)), tripData.getId(), tripData.getName());
+				if (newTrip != null) {
+					response.getWriter().append(objectMapper.writeValueAsString(newTrip));
+					session.setAttribute("trip", newTrip);
+					response.setContentType("application/json");
+					response.setStatus(200);
+				}
+			} else {
+				response.getWriter().append("Please login");
+				response.setStatus(401);
+			}
 		}
 	}
 }
