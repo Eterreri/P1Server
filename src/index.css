@@ -120,32 +120,40 @@ form {
   font-weight: 550;
 }
 
-#trashBtn {
+td.editTD {
+  height: 100%;
+  width: 5%;
+}
+
+td.editTD:hover {
+  background-color: #ddd;
+}
+
+.editBtn {
   height: 100%;
   width: 100%;
-  /*background-image: url(/OutdoorApp/img/trash);*/
-  background-size: cover;
   background-color: #ddd;
   border: none;
   border-radius: 10px;
-  background-origin: content-box;
-  background-repeat: no-repeat;
-  padding-top: 4px;
+  display:inline-block;
+  padding: none;
+  margin: none;
+  font-weight: 700;
 }
 
-#trashBtn:hover {
-  background-color: #DC143C;
+.editBtn:hover {
+  background-color: #ff0000;
 }
 
-#trash{
-  width: 25px;
-  height: 37px;
-  white-space: nowrap;
+.edit input{
+  float: left;
   padding: 0;
   margin: 0;
-  border: none;
+  width: 50%;
+  border: 0;
 }
 
-#trash:hover{
-  background-color: #DC143C;
+td form {
+  margin: 0;
+  padding: 0;
 }

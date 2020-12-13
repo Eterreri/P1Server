@@ -1,10 +1,12 @@
 import React, { Component } from "react";
+import Trip from './trip';
 
 class TripList extends Component {
   state = {
     UID: this.props.UID,
     trips: [],
     data: false,
+    edit: false,
   };
 
   render() {
@@ -14,14 +16,12 @@ class TripList extends Component {
         <table className="table">
           <thead className="thead-dark">
             <tr>
-              <th>{this.state.UID? "Your Trips": "Looks like you aren't logged in yet!"}</th>
+              <th colSpan="2">{this.state.UID? "Your Trips": "Looks like you aren't logged in yet!"}</th>
             </tr>
           </thead>
           <tbody id="table-data">
             {this.state.trips.map((trip) => (
-              <tr key={trip.tripId}>
-                <td>{trip.tripName}</td>
-              </tr>
+              <Trip key={trip.tripId} tripId={trip.tripId} tripName={trip.tripName} UID={this.state.UID} edit={this.edit}/>
             ))}
           </tbody>
         </table>
@@ -32,9 +32,14 @@ class TripList extends Component {
 
   getDate = () => {
     if (!this.state.data) {
+      this.setState({ data: true });
       this.getTrips();
     }
   };
+
+  edit = () => {
+    this.getTrips();
+  }
 
   getTrips = () => {
     if (this.state.UID) {
@@ -53,7 +58,6 @@ class TripList extends Component {
             tripsl.push(trip);
           });
           this.setState({ trips: tripsl });
-          this.setState({ data: true });
         });
     }
   };
