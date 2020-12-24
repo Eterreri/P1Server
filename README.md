@@ -1,7 +1,39 @@
 # Travel Planner Frontend
 
-http://travel-planner-bucket.s3-website.us-east-2.amazonaws.com/
+## Project Description
 
-## Functionality
+The frontend webpage for the Travel-Planner API.
 
-Users can login and logout, create a user account, and create, view, and edit trips
+## Technologies Used
+
+* React
+* JavaScript
+* HTML
+* CSS
+
+## Features
+
+* User can login
+* User can logout
+* User can make a User Account
+* User can Create a trip
+* User can view a list of their trips
+* User can edit their trips
+
+## Getting Started
+   
+> git clone https://github.com/Eterreri/Tomcat-Server-Frontend.git
+Setup static website on NPM server or S3 Bucket with static website hosting.
+
+## Usage
+
+When first entering the webpage you are prompted to login using the navbar buttons to login, or create an account.
+After logging in you are shown the home page where you can view a list of all your trips. You can also use the navbar to create a trip and logout.
+
+## Contributors
+
+Backend provided by [Zachary Garner](<https://github.com/ZAG852>).
+
+## License
+
+This project uses the following license: [MIT](<https://opensource.org/licenses/MIT>).
